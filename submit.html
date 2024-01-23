@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Details</title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Details</h1>
+    <form onsubmit="return found()">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="college">College Name</label>
+        <input type="text" id="college" name="college" required>
+      </div>
+      <div class="form-group">
+        <label for="course">Course</label>
+        <input type="text" id="course" name="course" required>
+      </div>
+      <div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year" required>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <input type="text" id="semester" name="semester" required>
+      </div>
+     
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  
+  <script>
+    function found() {
+      var college = document.getElementById("college").value;
+      var year = document.getElementById("year").value;
+      var semester = document.getElementById("semester").value;
+      var course = document.getElementById("course").value;
+
+      console.log(college, year, semester, course); // Debug statement
+
+      if (college.indexOf("Graphic Era") !== -1 && year === "2023" && semester === "4" && course.toLowerCase() === "bca") {
+        console.log("Redirecting..."); // Debug statement
+        window.location.href = "subject.html";
+        return false; // Prevent form submission
+      } else {
+        alert("No database found");
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</body>
+</html>
